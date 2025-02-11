@@ -1,0 +1,91 @@
+/* מיכל ראשי שמרכז את התוכן אנכית ואופקית */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* גובה מלא של חלון הדפדפן */
+}
+
+/* מיכל הטופס */
+.form-container {
+    text-align: center; /* ממרכז את הטקסט */
+    width: 100%;
+    max-width: 450px; /* רוחב מקסימלי של הטופס */
+    padding: 20px; /* רווח פנימי */
+    background: white; /* צבע רקע לבן */
+    border-radius: 10px; /* פינות מעוגלות */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* צל קל */
+}
+
+/* כותרת ראשית */
+h1 {
+    margin-bottom: 20px; /* רווח תחתון */
+    color: #333; /* צבע טקסט כהה */
+}
+
+/* קבוצת טופס */
+.form-group {
+    margin-bottom: 15px; /* רווח תחתון */
+    text-align: left; /* יישור טקסט לשמאל */
+}
+
+/* תוויות של שדות הקלט */
+label {
+    display: block; /* תצוגה כבלוק */
+    margin-bottom: 5px; /* רווח תחתון */
+}
+
+/* שדות קלט */
+input {
+    width: 95%; /* רוחב כמעט מלא */
+    padding: 10px; /* רווח פנימי */
+    border: 1px solid #ccc; /* גבול אפור בהיר */
+    border-radius: 5px; /* פינות מעוגלות */
+}
+
+/* שדה קלט בפוקוס */
+input:focus {
+    outline: none; /* ללא קו מתאר */
+    border-color: #000; /* צבע גבול שחור */
+}
+
+/* כפתור */
+.btn {
+    width: 100%; /* רוחב מלא */
+    padding: 10px; /* רווח פנימי */
+    border: none; /* ללא גבול */
+    background-color: var(--primary-color); /* צבע רקע משתנה */
+    color: white; /* צבע טקסט לבן */
+    border-radius: 5px; /* פינות מעוגלות */
+    cursor: pointer; /* סמן עכבר כיד */
+    font-size: 16px; /* גודל גופן */
+}
+
+/* כפתור במעבר עכבר */
+.btn:hover {
+    background-color: var(--deep-blue); /* צבע רקע משתנה */
+}
+
+/* כפתור מנוטרל */
+.btn:disabled {
+    background-color: #ccc; /* צבע רקע אפור */
+    cursor: not-allowed; /* סמן עכבר לא מורשה */
+}
+
+/* פסקאות */
+p {
+    margin-top: 15px; /* רווח עליון */
+    font-size: 14px; /* גודל גופן */
+    color: #555; /* צבע טקסט אפור כהה */
+}
+
+/* אלמנט span */
+span {
+    color: #007bff; /* צבע טקסט כחול */
+    cursor: pointer; /* סמן עכבר כיד */
+}
+
+/* אלמנט span במעבר עכבר */
+span:hover {
+    text-decoration: underline; /* קו תחתון */
+}
