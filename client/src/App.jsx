@@ -1,6 +1,7 @@
-import { AuthForm,Dashboard,Navbar,useAuth,Expenses,Income } from './components'
+import { AuthForm,Dashboard,Navbar,useAuth,Expenses,Income,Loading } from './components'
 import {ToastContainer} from 'react-toastify'
 import {Routes,Route} from 'react-router'
+
 
 
 
@@ -9,7 +10,9 @@ function App() {
   const {isLoggedIn,user,isPending} = useAuth();
 
   if(isPending){
-    return <div>Loading...</div>
+    return (
+      <Loading/>
+    )
   }
   return (
     <>

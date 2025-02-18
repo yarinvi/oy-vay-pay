@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import './AuthFrom.css';
+import '../styles/AuthForm.css';
 import { signIn, signUp } from '../api/auth';
 import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router';

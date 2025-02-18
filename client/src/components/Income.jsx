@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useAuth } from './AuthProvider';
-import './Expenses.css'; // Reuse the same styles
+import '../styles/Expenses.css'; // Reuse the same styles
 import { addIncome, getIncomes } from '../api/income';
 import { toast } from 'react-toastify';
 import { CURRENCY_SYMBOLS } from '../constants';

@@ -1,9 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react'
 import { useAuth } from './AuthProvider'
-import './Expenses.css'
+import '../styles/Expenses.css'
 import { addExpense, getExpenses, deleteExpense, updateExpense } from '../api/expense';
 import { toast } from 'react-toastify';
 import { CURRENCY_SYMBOLS } from '../constants';
+import { SlidersHorizontal } from 'lucide-react';
 
 export const Expenses = () => {
   const [isPending, setIsPending] = useState(false)
@@ -16,6 +17,11 @@ export const Expenses = () => {
   const currencyRef = useRef(null);
   const [editMode, setEditMode] = useState(false);
   const [currentExpense, setCurrentExpense] = useState(null);
+  const [inputSearch, setInputSearch] = useState('');
+
+  const filteredExpenses = expenses.filter(expense =>
+    expense.title.toLowerCase().includes(inputSearch.toLowerCase())
+  );
 
   const resetFields = () => {
     titleRef.current.value = "";
@@ -141,40 +147,50 @@ export const Expenses = () => {
           {editMode ? 'Edit Expense' : 'Add Expense'}
         </button>
       </form>
-      <table className='expenses-table'>
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Amount</th>
-            <th>Tag</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {expenses && expenses.length > 0 ? (
-            expenses.map((expense) => (
-              <tr key={expense._id}>
-                <td>{expense.title}</td>
-                <td>{expense.description}</td>
-                <td>{expense.amount} {CURRENCY_SYMBOLS[expense.currency]}</td>
-                <td>{expense.tag}</td>
-
-                <td>
-                  <div className='action-buttons'>
-                    <button className='edit-button' onClick={() => handleEditClick(expense)}>Edit</button>
-                    <button className='delete-button' onClick={() => handleDelete(expense._id)}>Delete</button>
-                  </div>
-                </td>
-              </tr>
-            ))
-          ) : (
+      <div className="filters">
+        <input type="text" placeholder="Search..." value={inputSearch}
+          onChange={({ target }) => setInputSearch(target.value)} />
+        <button>
+          <SlidersHorizontal />
+        </button>
+      </div>
+      {expenses.length === 0 ? (
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          No expenses found. Add your first expense!
+        </div>
+      ) : (
+        <table className='expenses-table'>
+          <thead>
             <tr>
-              <td colSpan="6">No expenses found</td>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Tag</th>
+              <th>Action</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredExpenses.length > 0 ? (
+              filteredExpenses.map((expense) => (
+                <tr key={expense._id}>
+                  <td>{expense.title}</td>
+                  <td>{expense.description}</td>
+                  <td>{expense.amount} {CURRENCY_SYMBOLS[expense.currency]}</td>
+                  <td>{expense.tag}</td>
+                  <td>
+                    <div className='action-buttons'>
+                      <button className='edit-button' onClick={() => handleEditClick(expense)}>Edit</button>
+                      <button className='delete-button' onClick={() => handleDelete(expense._id)}>Delete</button>
+                    </div>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <p className='not-found'>No expenses found matching "{inputSearch}"</p>
+            )}
+          </tbody>
+        </table>
+      )}
     </main>
   );
 }

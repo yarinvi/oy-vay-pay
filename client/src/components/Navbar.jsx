@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router';
-import './Navbar.css';
-import './Expenses.css';
+import '../styles/Navbar.css';
+import '../styles/Expenses.css';
 import { logout } from '../api/auth';
 
 
