@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import '../styles/AuthForm.css';
 import { signIn, signUp } from '../api/auth';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router';
 
 export const AuthForm = () => {
@@ -94,7 +94,7 @@ return (
 </form>
 <p>
 {isLogin ? "Don't have an account?" : 'Already have an account?'}
-<span onClick={() => setIsLogin(!isLogin)}>
+<span onClick={() => setIsLogin(!isLogin)} className='auth-mode'>
 {isLogin ? ' Sign Up' : ' Login'}
 </span>
 </p>

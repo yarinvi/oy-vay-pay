@@ -1,91 +1,78 @@
-/* מיכל ראשי שמרכז את התוכן אנכית ואופקית */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* גובה מלא של חלון הדפדפן */
+    height: 100vh;
 }
 
-/* מיכל הטופס */
 .form-container {
-    text-align: center; /* ממרכז את הטקסט */
+    text-align: center;
     width: 100%;
-    max-width: 450px; /* רוחב מקסימלי של הטופס */
-    padding: 20px; /* רווח פנימי */
-    background: white; /* צבע רקע לבן */
-    border-radius: 10px; /* פינות מעוגלות */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* צל קל */
+    max-width: 450px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* כותרת ראשית */
 h1 {
-    margin-bottom: 20px; /* רווח תחתון */
-    color: #333; /* צבע טקסט כהה */
+    margin-bottom: 20px;
+    color: #333;
 }
 
-/* קבוצת טופס */
 .form-group {
-    margin-bottom: 15px; /* רווח תחתון */
-    text-align: left; /* יישור טקסט לשמאל */
+    margin-bottom: 15px;
+    text-align: left;
 }
 
-/* תוויות של שדות הקלט */
 label {
-    display: block; /* תצוגה כבלוק */
-    margin-bottom: 5px; /* רווח תחתון */
+    display: block;
+    margin-bottom: 5px;
 }
 
-/* שדות קלט */
 input {
-    width: 95%; /* רוחב כמעט מלא */
-    padding: 10px; /* רווח פנימי */
-    border: 1px solid #ccc; /* גבול אפור בהיר */
-    border-radius: 5px; /* פינות מעוגלות */
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-/* שדה קלט בפוקוס */
 input:focus {
-    outline: none; /* ללא קו מתאר */
-    border-color: #000; /* צבע גבול שחור */
+    outline: none;
+    border-color: #000;
 }
 
-/* כפתור */
 .btn {
-    width: 100%; /* רוחב מלא */
-    padding: 10px; /* רווח פנימי */
-    border: none; /* ללא גבול */
-    background-color: var(--primary-color); /* צבע רקע משתנה */
-    color: white; /* צבע טקסט לבן */
-    border-radius: 5px; /* פינות מעוגלות */
-    cursor: pointer; /* סמן עכבר כיד */
-    font-size: 16px; /* גודל גופן */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-/* כפתור במעבר עכבר */
 .btn:hover {
-    background-color: var(--deep-blue); /* צבע רקע משתנה */
+    background-color: var(--deep-blue);
 }
 
-/* כפתור מנוטרל */
 .btn:disabled {
-    background-color: #ccc; /* צבע רקע אפור */
-    cursor: not-allowed; /* סמן עכבר לא מורשה */
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
-/* פסקאות */
 p {
-    margin-top: 15px; /* רווח עליון */
-    font-size: 14px; /* גודל גופן */
-    color: #555; /* צבע טקסט אפור כהה */
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
 }
 
-/* אלמנט span */
-span {
-    color: #007bff; /* צבע טקסט כחול */
-    cursor: pointer; /* סמן עכבר כיד */
+.auth-mode {
+    color: #007bff;
+    cursor: pointer;
 }
 
-/* אלמנט span במעבר עכבר */
-span:hover {
-    text-decoration: underline; /* קו תחתון */
+.auth-mode:hover {
+    text-decoration: underline;
 }

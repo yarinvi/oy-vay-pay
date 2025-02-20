@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { LineChart, BarChart } from './charts';
 import { useAuth } from './AuthProvider';
 import '../styles/Dashboard.css';
 import { getTotalExpenses } from '../api/expense';
@@ -46,6 +47,10 @@ export const Dashboard = () => {
           <h2>Total Balance</h2>
           <p>{CURRENCY_SYMBOLS['ILS']}100000</p>
         </div>
+      </div>
+      <div className='charts'>
+        <LineChart />
+        <BarChart />
       </div>
     </div>
   );

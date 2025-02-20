@@ -58,6 +58,16 @@
     flex: 1;
     min-width: 30%;
 }
+
+.charts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 80px;
+}   
+
+
 @media (min-width: 1024px){
     .dashboard-header{
         font-size: 2rem;
@@ -68,5 +78,8 @@
     .card p{
         font-size: 2rem;
     }
+    .charts{
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
-
